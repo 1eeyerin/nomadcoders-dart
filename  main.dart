@@ -1,29 +1,29 @@
 void main() {
-  var giveMeFive = true;
-  var numbers = [
-    1,
-    2,
-    3,
-    4,
-    if (giveMeFive) 5, //collection if : giveMeFive가 true일 경우 List에 5를 추가함
+  //Map: js or ts === object
+  var player = {
+    'name': 'nico',
+    'xp': 19.99,
+    'superpower': false,
+  };
+
+  Map<int, bool> player2 = {
+    1: true,
+    2: false,
+    3: false,
+  };
+
+  Map<List<int>, bool> player3 = {
+    [3, 234, 3]: true,
+  };
+
+  List<Map<String, Object>> player4 = [
+    {
+      'sdsd': false,
+      'sdds': [234, 234, 23423]
+    },
+    {
+      'sdsd': false,
+      'sdds': [234, 234, 23423]
+    },
   ];
-
-  print(numbers);
-
-  //String interpolation : text에 변수를 추가하는 방법
-  var name = 'yr';
-  var age = 10;
-  var greeting = "Hello everyone, my name is $name, and i'm ${age + 2}";
-  print(greeting);
-
-  //collection for
-  var oldFriends = ['nico', 'lynn'];
-  var newFriends = [
-    'lewis',
-    'ralph',
-    'darren',
-    for (var friend in oldFriends) "❤️‍🔥 $friend",
-  ];
-
-  print(newFriends);
 }
