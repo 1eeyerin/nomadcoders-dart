@@ -1,29 +1,6 @@
 void main() {
-  //Map: js or ts === object
-  var player = {
-    'name': 'nico',
-    'xp': 19.99,
-    'superpower': false,
-  };
-
-  Map<int, bool> player2 = {
-    1: true,
-    2: false,
-    3: false,
-  };
-
-  Map<List<int>, bool> player3 = {
-    [3, 234, 3]: true,
-  };
-
-  List<Map<String, Object>> player4 = [
-    {
-      'sdsd': false,
-      'sdds': [234, 234, 23423]
-    },
-    {
-      'sdsd': false,
-      'sdds': [234, 234, 23423]
-    },
-  ];
+  //Sets
+  var numbers = {1, 2, 3, 4};
+  Set<int> numbers2 = {1, 2, 3, 4};
+  //Set은 순서가 있다, List랑 같지만 모든 요소가 유니크 해야한다
 }
