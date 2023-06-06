@@ -1,34 +1,34 @@
-/** 
- * typedef
- * 자료형이 헷갈릴때 도움이 되는 alias
- * 자료형에 alias를 붙일 수 있게 함
-*/
+class Player {
+  final String name = 'nico';
+  /**
+   * final 
+   * example) final String name = 'nico';
+   * === js const
+   * */
 
-typedef ListOfInts = List<int>;
-typedef UserInfo = Map<String, String>;
+  /** 
+   * late
+   * example) late final String name = 'nico'; 
+   * 초기 데이터 없이 선언 가능
+   * */
 
-//숫자 배열을 반환하는 함수(파라미터값도 숫자배열로 들어온다)
-List<int> reverseListOfNumbers(List<int> list) {
-  var reversed = list.reversed;
-  //List를 리버스하면 리스트랑은 조금 다른 iterable이 되어서 다시 list로 변환해주어야함
-  return reversed.toList();
-}
+  /** const 
+   * example) const name = 'nico';
+   * compile-time constant
+   * */
+  int xp = 1500;
 
-//숫자 배열을 반환하는 함수(파라미터값도 숫자배열로 들어온다)
-ListOfInts reverseListOfNumbers1(ListOfInts list) {
-  var reversed = list.reversed;
-  //List를 리버스하면 리스트랑은 조금 다른 iterable이 되어서 다시 list로 변환해주어야함
-  return reversed.toList();
-}
-
-// 구조화된 data의 형태를 지정하고 싶다면 class를 사용해야 한다
-String sayHi(UserInfo userInfo) {
-  return "Hi ${userInfo['name']}";
+  void sayHello() {
+    /** 
+     * this.name으로 가능하나, 
+     * method내에서 같은 이름의 variable가 있어서 어쩔 수 없이 사용하는게 아니면
+     * class method 내의 this는 사용하지 않는 것을 권고하고 있음 
+     * */
+    print('hi my name is $name');
+  }
 }
 
 void main() {
-  var reverse = reverseListOfNumbers1([1, 2, 3]);
-  print(reverse);
-
-  print(sayHi({"name": "nico"}));
+  var player = Player();
+  player.sayHello();
 }
