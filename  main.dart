@@ -1,34 +1,35 @@
+/**
+ *  
+ * class Player {
+ * late final String name;
+ * late int xp; 
+ * constructor method의 이름은 class 이름과 같아야함
+ * Player(String name, int xp) {
+ *   this.name = name;
+ *  this.xp = xp;
+ * }
+ * 
+ * void sayHello() {
+ *   print('hi my name is $name, my xp ${xp + 1}');
+ * }
+ * }
+*/
+
 class Player {
-  final String name = 'nico';
-  /**
-   * final 
-   * example) final String name = 'nico';
-   * === js const
-   * */
+  final String name;
+  int xp;
 
-  /** 
-   * late
-   * example) late final String name = 'nico'; 
-   * 초기 데이터 없이 선언 가능
-   * */
-
-  /** const 
-   * example) const name = 'nico';
-   * compile-time constant
-   * */
-  int xp = 1500;
+  // constructor: 전달된 값 초기화
+  Player(this.name, this.xp);
 
   void sayHello() {
-    /** 
-     * this.name으로 가능하나, 
-     * method내에서 같은 이름의 variable가 있어서 어쩔 수 없이 사용하는게 아니면
-     * class method 내의 this는 사용하지 않는 것을 권고하고 있음 
-     * */
-    print('hi my name is $name');
+    print('hi my name is $name, my xp ${xp + 1}');
   }
 }
 
 void main() {
-  var player = Player();
+  var player = Player('yerin', 1500);
+  var player2 = Player('yerin1', 100);
   player.sayHello();
+  player2.sayHello();
 }
