@@ -1,10 +1,21 @@
-// text 형태 "red"로 쓸 필요 없다
-// enum:고정된 상수 값들의 집합, 특정 변수에 대한 값들을 정해놓는다
+// 추상화 클래스 (abstract class)로 객체를 생성할 수 없다
+// 어떤 청사진을 가지고 있어야하는지 정의해줌
+// 수많은 청사진에 메소드의 이름과 반환 타입만 정해서 정의 가능
+abstract class Human {
+  void walk();
+}
+
 enum Team { red, blue }
 
 enum XPLevel { beginner, medium, pro }
 
-class Player {
+class Coach extends Human {
+  void walk() {
+    print('the coach is walking');
+  }
+}
+
+class Player extends Human {
   String name;
   XPLevel xp;
   int age;
@@ -16,6 +27,10 @@ class Player {
     required this.age,
     required this.team,
   });
+
+  void walk() {
+    print('im walk');
+  }
 
   void sayHello() {
     print('hi my name is $name, age $age, team $team, xp $xp');
